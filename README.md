@@ -2,11 +2,11 @@
 
 QUM is a JavaScript tool (MediaWiki gadget/user script) for analyzing the quality of Arabic Wikipedia articles.
 It evaluates multiple dimensions (structure, references, links, media, maintenance, and language) and renders an in-page interactive report to help editors improve articles.
+> Target audience: Arabic Wikipedia editors, reviewers, and patrollers.
 
 > **Disclaimer:** This is an **unofficial** community tool. It is **not** affiliated with or endorsed by the Wikimedia Foundation.  
 > It is provided “as is” and should be reviewed before enabling as a gadget.
 > 
-> Target audience: Arabic Wikipedia editors, reviewers, and patrollers.
 
 ## Features
 - MediaWiki Action API–based architecture (no fragile DOM scraping)
