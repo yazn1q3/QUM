@@ -67,12 +67,12 @@
          const $header = $('<div>').addClass('qum-header');
          
          const version = window.QualityUltraMax.VERSION || '3.0';
-         const $title = $('<h2>').html(`📊 لوحة تحليل جودة المقالة <span class="qum-version">v${version}</span>`);
+         const $title = $('<h2>').html(`لوحة تحليل جودة المقالة <span class="qum-version">v${version}</span>`);
          $header.append($title);
          
          const $buttons = $('<div>').addClass('qum-buttons');
-         $buttons.append('<button id="qum-dark-toggle" title="تبديل الوضع الداكن">🌓</button>');
-         $buttons.append('<button id="qum-copy" title="نسخ التقرير">📋</button>');
+         $buttons.append('<button id="qum-dark-toggle" title="تبديل الوضع الداكن">تبديل الوضع</button>');
+         $buttons.append('<button id="qum-copy" title="نسخ التقرير">نسخ</button>');
          $buttons.append('<button id="qum-close" title="إغلاق">×</button>');
          
          $header.append($buttons);
@@ -94,7 +94,7 @@
             </div>`);
          }
          
-         $summary.append(`<h2 class="qum-article-title">📖 ${articleTitle}</h2>`);
+         $summary.append(`<h2 class="qum-article-title">${articleTitle}</h2>`);
          
          $summary.append(`<h3>${result.level} — المجموع ${parseFloat(result.total).toFixed(1)} / 100</h3>`);
          
@@ -125,21 +125,21 @@
          const $tbody = $('<tbody>');
          
          $tbody.append(this._createScoreRow(
-            '🏗️ البنية',
+            'البنية',
             result.scores.structure,
             25,
             this._getStructureDetails(result.details.structure)
          ));
          
          $tbody.append(this._createScoreRow(
-            '📚 المصادر',
+            'المصادر',
             result.scores.references,
             25,
             this._getReferencesDetails(result.details.references, result.scores.references)
          ));
          
          $tbody.append(this._createScoreRow(
-            '🧹 الصيانة',
+            'الصيانة',
             result.scores.maintenance,
             15,
             this._getMaintenanceDetails(result.details.maintenance)
@@ -153,7 +153,7 @@
          ));
          
          $tbody.append(this._createScoreRow(
-            '🖼️ الوسائط',
+            'الوسائط',
             result.scores.media,
             10,
             this._getMediaDetails(result.details.media)
@@ -161,7 +161,7 @@
          
          if (result.details.language) {
             $tbody.append(this._createScoreRow(
-               '✍️ اللغة والأسلوب',
+               'اللغة والأسلوب',
                result.scores.language,
                10,
                this._getLanguageDetails(result.details.language)
@@ -170,7 +170,7 @@
          
          if (result.details.revision) {
             $tbody.append(this._createScoreRow(
-               '⚖️ استقرار المقالة',
+               'استقرار المقالة',
                result.details.revision.details.stabilityScore || 0,
                10,
                this._getRevisionDetails(result.details.revision)
@@ -179,7 +179,7 @@
          
          if (result.details.wikidataIntegration) {
             $tbody.append(this._createScoreRow(
-               '🌐 تكامل ويكي بيانات',
+               'تكامل ويكي بيانات',
                result.details.wikidataIntegration.details.crossProjectScore || 0,
                10,
                this._getWikidataIntegrationDetails(result.details.wikidataIntegration)
@@ -415,7 +415,7 @@
 
          if (details.categoryList && Array.isArray(details.categoryList) && details.categoryList.length > 0) {
             html += '<div class="qum-category-box">';
-            html += '<strong>📂 قائمة التصنيفات:</strong><br>';
+            html += '<strong>قائمة التصنيفات:</strong><br>';
             html += '<ul class="qum-category-list">';
             
             details.categoryList.forEach(cat => {
